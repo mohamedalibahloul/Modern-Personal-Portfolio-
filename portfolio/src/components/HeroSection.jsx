@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-
+import profile from "../assets/profile.jpeg";
 export const HeroSection = () => {
   return (
     <section
@@ -8,22 +8,31 @@ export const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
+          <div className="flex justify-center">
+            <img
+              src={profile}
+              alt="Profile"
+              className="w-32 h-32 md:w-44 md:h-44 rounded-full border-4 border-primary shadow-lg object-cover opacity-0 animate-fade-in"
+            />
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
-              Pedro
+              Mohamed Ali
             </span>
             <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
               {" "}
-              Machado
+              Bahloul
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I create stellar web experiences with modern technologies.
-            Specializing in front-end development, I build interfaces that are
-            both beautiful and functional.
+            I am a passionate Computer Engineering student specializing in
+            modern web technologies. I build efficient, user-focused
+            applications from front-end interfaces to full-stack solutions,
+            always striving for clean design, performance, and seamless user
+            experience.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

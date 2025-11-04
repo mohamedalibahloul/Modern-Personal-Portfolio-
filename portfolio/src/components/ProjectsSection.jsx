@@ -3,32 +3,55 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "Modern Personal Portfolio",
+    description:
+      "A modern portfolio website built with animations, responsive UI and smooth UX.",
+    image: "/projects/portfolio.png", // add your image in public/projects folder
+    tags: ["React", "TailwindCSS", "Framer Motion"],
+    demoUrl: "#", // add link if you deploy it
+    githubUrl:
+      "https://github.com/mohamedalibahloul/Modern-Personal-Portfolio-",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Flutter Quiz App",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
+      "An interactive quiz application built with Flutter, featuring animations & scoring.",
+    image: "/projects/flutter-quiz.png",
+    tags: ["Flutter", "Dart", "Animations"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/mohamedalibahloul/flutter-quiz-app",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Doctor Appointment Booking System",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
+      "Full MERN stack appointment booking platform with roles for admin, doctor & patients.",
+    image: "/projects/doctor-app.png",
+    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl:
+      "https://github.com/mohamedalibahloul/Doctor-Appointment-Booking-System-",
+  },
+  {
+    id: 4,
+    title: "Text-To-Image Generator",
+    description:
+      "AI SaaS app that generates images from text prompts using ClipDrop API.",
+    image: "/projects/text-to-image.png",
+    tags: ["MERN", "AI", "ClipDrop"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/mohamedalibahloul/Text-To-Image-Generateur",
+  },
+  {
+    id: 5,
+    title: "Universal Translator App",
+    description:
+      "AI-powered app that translates JSON i18n files automatically.",
+    image: "/projects/translator.png",
+    tags: ["Angular", "Symfony", "PostgreSQL", "AI"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/mohamedalibahloul/universal-translator-app",
   },
 ];
 
@@ -37,7 +60,6 @@ export const ProjectsSection = () => {
     <section id="projects" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          {" "}
           Featured <span className="text-primary"> Projects </span>
         </h2>
 
@@ -62,14 +84,17 @@ export const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
+                  {project.tags.map((tag, i) => (
+                    <span
+                      key={i}
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
                 <p className="text-muted-foreground text-sm mb-4">
                   {project.description}
                 </p>
@@ -100,7 +125,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/mohamedalibahloul"
           >
             Check My Github <ArrowRight size={16} />
           </a>
