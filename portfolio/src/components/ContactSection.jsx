@@ -1,186 +1,108 @@
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-  Twitch,
-  Twitter,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
 
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    emailjs
+      .send(
+        "service_m2e2wpl",
+        "template_mhilkme",
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        "4WRPRfq-cp2uHOokR"
+      )
+      .then(
+        () => {
+          setStatus("✅ Message sent successfully!");
+          setForm({ name: "", email: "", message: "" });
+        },
+        () => setStatus("❌ Failed to send message. Try again!")
+      );
   };
+
   return (
-    <section id="contact" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
+    <section id="contact" className="py-24 px-4">
+      <div className="container max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Contact <span className="text-primary">Me</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
-              {" "}
-              Contact Information
-            </h3>
-
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Email</h4>
-                  <a
-                    href="mailto:hello@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    hello@gmail.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Phone</h4>
-                  <a
-                    href="tel:+11234567890"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +1 (123) 456-7890
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Vancouver, BC, Canada
-                  </a>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* CONTACT INFO */}
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <Mail className="text-primary" />
+              <span>mohamedalibahloul123@gmail.com</span>
             </div>
 
-            <div className="pt-8">
-              <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
-                  <Linkedin />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank">
-                  <Instagram />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitch />
-                </a>
-              </div>
+            <div className="flex items-center gap-3">
+              <Phone className="text-primary" />
+              <span>+216 24 563 833</span>
             </div>
-          </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
-            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+            <div className="flex items-center gap-3">
+              <MapPin className="text-primary" />
+              <span>Sousse, Tunisia</span>
+            </div>
 
-            <form className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
-                />
-              </div>
+            <div className="pt-4">
+              <h4 className="font-semibold text-lg mb-2">Connect With Me</h4>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="john@gmail.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
-                  placeholder="Hello, I'd like to talk about..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
-                )}
+              <a
+                href="https://www.linkedin.com/in/mohamed-ali-bahloul-0843b2262"
+                target="_blank"
+                className="flex items-center gap-2 text-primary hover:underline"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={16} />
-              </button>
-            </form>
+                <Linkedin /> LinkedIn
+              </a>
+            </div>
           </div>
+
+          {/* CONTACT FORM */}
+          <form onSubmit={sendEmail} className="space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
+              className="w-full p-3 border rounded-lg bg-background"
+              required
+            />
+
+            <input
+              type="email"
+              placeholder="Your Email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="w-full p-3 border rounded-lg bg-background"
+              required
+            />
+
+            <textarea
+              placeholder="Your Message"
+              value={form.message}
+              onChange={(e) => setForm({ ...form, message: e.target.value })}
+              className="w-full p-3 border rounded-lg h-32 bg-background"
+              required
+            />
+
+            <button type="submit" className="cosmic-button w-full">
+              Send Message
+            </button>
+
+            {status && (
+              <p className="text-center text-sm text-primary mt-2">{status}</p>
+            )}
+          </form>
         </div>
       </div>
     </section>
