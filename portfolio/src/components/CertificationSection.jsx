@@ -1,33 +1,75 @@
 import { ExternalLink, Award } from "lucide-react";
-
+import ccnaImg from "@/assets/CCNAITN.png";
+import IBM from "@/assets/IBM.jpeg";
+import awsCloudLea from "@/assets/awsCloudLea.png";
+import CCNASRWE1 from "@/assets/CCNASRWE1.png";
+import ciscoIA from "@/assets/ciscoIA.png";
+import devopsE from "@/assets/devopsE.png";
+import kuner from "@/assets/kuner.png";
+import microsoftazure from "@/assets/microsoftazure.png";
+import oracle from "@/assets/oracle.png";
 const certifications = [
   {
     id: 1,
-    title: "DevOps Essentials",
-    issuer: "Google Cloud Skill Boost",
-    image: "/certs/devops.png", // add image in public/certs/
-    link: "https://www.skills.google/course_templates/717",
+    title: "CCNA: Introduction to Networks",
+    issuer: "CISCO NETWORKING ACADEMY",
+    image: ccnaImg,
+    link: "https://www.credly.com/badges/8eb2639b-837e-4344-9476-ae6c0c3b239d",
   },
   {
     id: 2,
     title: "Developing Front-End Apps",
     issuer: "Meta / Coursera",
-    image: "/certs/frontend.png",
+    image: IBM,
     link: "https://www.coursera.org/account/accomplishments/verify/0UDE0WSPG0QT",
   },
   {
     id: 3,
-    title: "Credly Certified Courses",
-    issuer: "Credly",
-    image: "/certs/credly.png",
-    link: "https://www.credly.com/users/mohamed-bahloul.6a811f56",
+    title: "Cloud Foundations",
+    issuer: "AWS ACADEMY",
+    image: awsCloudLea,
+    link: "https://www.credly.com/earner/earned/badge/956b5263-353d-4e25-89f8-acd1e6387b44",
   },
   {
     id: 4,
-    title: "LinkedIn Learning Certifications",
-    issuer: "LinkedIn",
-    image: "/certs/linkedin.png",
-    link: "https://www.linkedin.com/in/mohamed-ali-bahloul-0843b2262/details/certifications/",
+    title: "CCNA: SWITCHING,ROUTING & WIRELESS ESSENTIALS",
+    issuer: "CISCO NETWORKING ACADEMY",
+    image: CCNASRWE1,
+    link: "https://www.credly.com/earner/earned/badge/8c5be49f-362c-4751-99c7-630a4e322dce",
+  },
+  {
+    id: 5,
+    title: "INTRODUCTION TO MODERN AI",
+    issuer: "CISCO NETWORKING ACADEMY",
+    image: ciscoIA,
+    link: "https://www.credly.com/earner/earned/badge/53ffe171-11c8-47f9-9de5-c126e3d754cb",
+  },
+  {
+    id: 6,
+    title: "DevOps ESSENTIALS",
+    issuer: "Google Cloud",
+    image: devopsE,
+  },
+  {
+    id: 7,
+    title: "MANAGE KUBERNETES IN GOOGLE CLOUD",
+    issuer: "Google Cloud",
+    image: kuner,
+    link: "https://www.credly.com/earner/earned/badge/dd2e0d36-fda8-467b-9f9c-cc6cfe13d4d4",
+  },
+  {
+    id: 8,
+    title: "Azure Fundamentals",
+    issuer: "Microsoft Certified",
+    image: microsoftazure,
+    link: "https://www.credly.com/earner/earned/badge/0a4abf3e-564b-45b8-972f-138e0dbf57a3",
+  },
+  {
+    id: 9,
+    title: "Oracle Cloud Infrastructure AI",
+    issuer: "Oracle",
+    image: oracle,
+    link: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=3F43F9AA981032BDA612A9B9D273BA78BE807DC06631D0FDB0C792C5A72818F1",
   },
 ];
 
