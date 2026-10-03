@@ -37,8 +37,8 @@ export const AboutSection = () => {
 
               {/* Download CV Button */}
               <a
-                href="/Copie de Bahloul Mohamed ali.pdf"
-                download="mohamed-ali-bahloul.pdf"
+                href="/QaAutomationcv.pdf"
+                download="QaAutomationcv.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300 text-center"
               >
                 Download CV

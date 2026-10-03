@@ -22,7 +22,16 @@ import generateur2 from "@/assets/projects/generateur2.JPG";
 import generateur3 from "@/assets/projects/generateur3.JPG";
 import generateur4 from "@/assets/projects/generateur4.JPG";
 import translater from "@/assets/projects/translater.JPG";
-
+import globalarchitecture from "@/assets/projects/globalarchitecture.png";
+import filledplaywrtie from "@/assets/projects/filledplaywrtie.png";
+import n8nworkflow from "@/assets/projects/n8nworkflow.png";
+import jsonexemple from "@/assets/projects/json-exemple.png";
+import sqtrtemplatepart1 from "@/assets/projects/sqtrtemplatepart1.png";
+import sqtrtemplatepart2 from "@/assets/projects/sqtrtemplatepart2.png";
+import testcase1 from "@/assets/projects/testcase1.png";
+import qa1 from "@/assets/projects/qa1.png";
+import qa2 from "@/assets/projects/qa2.png";
+import qaai from "@/assets/projects/qaai.png";
 const projects = [
   {
     id: 1,
@@ -31,7 +40,15 @@ const projects = [
       "End-to-end multi-layer automated testing ecosystem (Web, Mobile, API) featuring GitHub Actions CI/CD, n8n AI report workflows, and a Flask/Docker server.",
     fullDescription:
       "Designed and implemented a comprehensive multi-tier QA automation strategy for a SaaS e-health platform. Covered frontend (Playwright), mobile (Appium), and API (Supertest) test suites mapped to RBAC, tenant isolation, and authentication workflows. Integrated AI-powered reporting pipelines with n8n and Groq API to convert execution logs into human-readable bug reports, alongside a Flask/Docker server for automated HTML report distribution.",
-    images: [translater],
+    images: [
+      globalarchitecture,
+      filledplaywrtie,
+      n8nworkflow,
+      jsonexemple,
+      sqtrtemplatepart1,
+      sqtrtemplatepart2,
+      testcase1,
+    ],
     tags: [
       "Playwright",
       "Pytest",
@@ -52,7 +69,7 @@ const projects = [
       "Interactive QA dashboard that parses test outputs (Playwright, Pytest, Jest) into visual charts and uses AI to generate failure root-cause analysis and fix suggestions.",
     fullDescription:
       "QA Vision turns raw test logs and CLI outputs into actionable engineering metrics. Converts Playwright, Jest, and Pytest outputs into interactive charts (Pass/Fail ratios, suite durations, category breakdowns), leveraging AI to parse error stacks and DOM locators for instant root-cause bug explanations.",
-    images: [translater],
+    images: [qa1, qa2, qaai],
     tags: ["React", "AI Integration", "Playwright", "Jest", "Tailwind CSS"],
     demoUrl: "#",
     githubUrl: "https://github.com/mohamedalibahloul",
