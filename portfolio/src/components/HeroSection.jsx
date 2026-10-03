@@ -1,5 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import profile from "../assets/profile.jpeg";
+
 export const HeroSection = () => {
   return (
     <section
@@ -27,12 +28,12 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I am a passionate Computer Engineering student specializing in
-            modern web technologies. I build efficient, user-focused
-            applications from front-end interfaces to full-stack solutions,
-            always striving for clean design, performance, and seamless user
-            experience.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+            I am a QA Automation Engineer & Software Engineer specializing in
+            end-to-end automated testing strategies across Web, Mobile, and
+            APIs. I build maintainable test automation pipelines with CI/CD
+            integration, Docker, and AI-powered QA reporting to drive top-tier
+            software reliability.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
