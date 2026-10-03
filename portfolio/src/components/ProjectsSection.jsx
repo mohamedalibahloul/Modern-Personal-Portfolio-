@@ -15,59 +15,87 @@ import generateur3 from "@/assets/projects/generateur3.JPG";
 import generateur4 from "@/assets/projects/generateur4.JPG";
 import translater from "@/assets/projects/translater.JPG";
 
-translater.JPG;
 const projects = [
   {
     id: 1,
-    title: "Modern Personal Portfolio",
+    title: "SaaS E-Health QA Automation Platform",
     description:
-      "A modern portfolio website built with animations, responsive UI and smooth UX.",
-    images: [portfolio1, portfolio2],
-    tags: ["React", "TailwindCSS", "Framer Motion"],
+      "End-to-end multi-layer automated testing ecosystem (Web, Mobile, API) featuring GitHub Actions CI/CD, n8n AI report workflows, and a Flask/Docker server.",
+    images: [translater],
+    tags: [
+      "Playwright",
+      "Pytest",
+      "Appium",
+      "Supertest",
+      "n8n",
+      "Groq AI",
+      "Docker",
+      "React",
+    ],
     demoUrl: "#",
-    githubUrl:
-      "https://github.com/mohamedalibahloul/Modern-Personal-Portfolio-",
+    githubUrl: "https://github.com/mohamedalibahloul/qa_pura",
   },
   {
     id: 2,
-    title: "Flutter Quiz App",
+    title: "QA Vision – AI-Powered QA Insights Dashboard",
     description:
-      "An interactive quiz application built with Flutter, featuring animations & scoring.",
-    images: [quiz1, quiz2, quiz3],
-    tags: ["Flutter", "Dart", "Animations"],
+      "Interactive QA dashboard that parses test outputs (Playwright, Pytest, Jest) into visual charts and uses AI to generate failure root-cause analysis and fix suggestions.",
+    images: [translater],
+    tags: ["React", "AI Integration", "Playwright", "Jest", "Tailwind CSS"],
     demoUrl: "#",
-    githubUrl: "https://github.com/mohamedalibahloul/flutter-quiz-app",
+    githubUrl: "https://github.com/mohamedalibahloul",
   },
   {
     id: 3,
+    title: "Universal Translator App",
+    description:
+      "AI-powered web application that automates JSON i18n file translation and project management workflows.",
+    images: [translater],
+    tags: ["Angular", "Symfony 7", "PostgreSQL", "AI API"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/mohamedalibahloul/universal-translator-app",
+  },
+  {
+    id: 4,
     title: "Doctor Appointment Booking System",
     description:
-      "Full MERN stack appointment booking platform with roles for admin, doctor & patients.",
-    images: [docteur1, docteur2, docteur3, docteur4, docteur5], // replace with real images later
-    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
+      "Full MERN stack medical booking platform with role-based features for patients, doctors, and administrators including online payments.",
+    images: [docteur1, docteur2, docteur3, docteur4, docteur5],
+    tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     demoUrl: "#",
     githubUrl:
       "https://github.com/mohamedalibahloul/Doctor-Appointment-Booking-System-",
   },
   {
-    id: 4,
-    title: "Text-To-Image Generator",
+    id: 5,
+    title: "AI Text-To-Image Generator",
     description:
-      "AI SaaS app that generates images from text prompts using ClipDrop API.",
-    images: [generateur1, generateur2, generateur3, generateur4], // replace with real images later
-    tags: ["MERN", "AI", "ClipDrop"],
+      "SaaS AI app generating high-quality images from text prompts using the ClipDrop API with user auth and secure storage.",
+    images: [generateur1, generateur2, generateur3, generateur4],
+    tags: ["React", "Node.js", "Express", "ClipDrop AI", "Tailwind CSS"],
     demoUrl: "#",
     githubUrl: "https://github.com/mohamedalibahloul/Text-To-Image-Generateur",
   },
   {
-    id: 5,
-    title: "Universal Translator App",
+    id: 6,
+    title: "Flutter Quiz App",
     description:
-      "AI-powered app that translates JSON i18n files automatically.",
-    images: [translater], // replace with real images later
-    tags: ["Angular", "Symfony", "PostgreSQL", "AI"],
+      "Interactive cross-platform mobile quiz app with custom animations and dynamic score tracking.",
+    images: [quiz1, quiz2, quiz3],
+    tags: ["Flutter", "Dart", "Mobile Animations"],
     demoUrl: "#",
-    githubUrl: "https://github.com/mohamedalibahloul/universal-translator-app",
+    githubUrl: "https://github.com/mohamedalibahloul/flutter-quiz-app",
+  },
+  {
+    id: 7,
+    title: "Modern Personal Portfolio",
+    description:
+      "Responsive developer portfolio showcasing projects, interactive skill visualizations, and contact integrations.",
+    images: [portfolio1, portfolio2],
+    tags: ["React", "Tailwind CSS", "Framer Motion"],
+    demoUrl: "#",
+    githubUrl:
+      "https://github.com/mohamedalibahloul/Modern-Personal-Portfolio-",
   },
 ];
 
@@ -80,98 +108,106 @@ export const ProjectsSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects. Each project was carefully
-          crafted with attention to detail, performance, and user experience.
+          Here are my core software engineering and QA automation projects,
+          highlighting automated testing, AI workflow automation, and full-stack
+          solutions.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (
             <div
               key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
+              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover flex flex-col justify-between"
             >
-              {/* IMAGE SLIDER */}
-              <div
-                className="h-48 overflow-hidden relative group"
-                onMouseEnter={(e) => {
-                  const inner = e.currentTarget.querySelector(".slider-inner");
-
-                  const totalImages = Number(inner.dataset.total);
-
-                  // CONSTANT SPEED (super smooth)
-                  const duration = 25000; // 12 seconds total, change as you like
-
-                  inner.style.transition = `transform ${duration}ms linear`;
-                  inner.style.transform = `translateX(-${totalImages * 100}%)`;
-                }}
-                onMouseLeave={(e) => {
-                  const inner = e.currentTarget.querySelector(".slider-inner");
-
-                  inner.style.transition = "none";
-                  inner.style.transform = "translateX(0)";
-                }}
-              >
+              <div>
+                {/* IMAGE SLIDER */}
                 <div
-                  className="slider-inner flex h-full"
-                  style={{
-                    width: `${(project.images.length + 1) * 100}%`, // duplicate makes loop seamless
+                  className="h-48 overflow-hidden relative group"
+                  onMouseEnter={(e) => {
+                    const inner =
+                      e.currentTarget.querySelector(".slider-inner");
+                    if (!inner) return;
+
+                    const totalImages = Number(inner.dataset.total);
+                    const duration = 25000;
+
+                    inner.style.transition = `transform ${duration}ms linear`;
+                    inner.style.transform = `translateX(-${totalImages * 100}%)`;
                   }}
-                  data-total={project.images.length}
+                  onMouseLeave={(e) => {
+                    const inner =
+                      e.currentTarget.querySelector(".slider-inner");
+                    if (!inner) return;
+
+                    inner.style.transition = "none";
+                    inner.style.transform = "translateX(0)";
+                  }}
                 >
-                  {/* All images */}
-                  {project.images.map((img, i) => (
+                  <div
+                    className="slider-inner flex h-full"
+                    style={{
+                      width: `${(project.images.length + 1) * 100}%`,
+                    }}
+                    data-total={project.images.length}
+                  >
+                    {project.images.map((img, i) => (
+                      <img
+                        key={i}
+                        src={img}
+                        alt={project.title}
+                        className="h-full w-full object-cover"
+                      />
+                    ))}
+
                     <img
-                      key={i}
-                      src={img}
+                      src={project.images[0]}
                       alt={project.title}
                       className="h-full w-full object-cover"
                     />
-                  ))}
+                  </div>
+                </div>
 
-                  {/* Duplicate first image */}
-                  <img
-                    src={project.images[0]}
-                    alt={project.title}
-                    className="h-full w-full object-cover"
-                  />
+                {/* CONTENT */}
+                <div className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <h3 className="text-xl font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    {project.description}
+                  </p>
                 </div>
               </div>
 
-              {/* CONTENT */}
-              <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-
-                <div className="flex justify-between items-center">
-                  <div className="flex space-x-3">
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <Github size={20} />
-                    </a>
-                  </div>
+              {/* FOOTER LINKS */}
+              <div className="p-6 pt-0 flex justify-between items-center">
+                <div className="flex space-x-3">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                  >
+                    <Github size={20} />
+                  </a>
                 </div>
               </div>
             </div>
@@ -183,6 +219,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
+            rel="noreferrer"
             href="https://github.com/mohamedalibahloul"
           >
             Check My Github <ArrowRight size={16} />
