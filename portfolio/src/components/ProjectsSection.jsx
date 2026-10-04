@@ -22,16 +22,16 @@ import generateur2 from "@/assets/projects/generateur2.JPG";
 import generateur3 from "@/assets/projects/generateur3.JPG";
 import generateur4 from "@/assets/projects/generateur4.JPG";
 import translater from "@/assets/projects/translater.JPG";
-import globalarchitecture from "@/assets/projects/globalarchitecture.png";
+import globalarchitecture from "@/assets/projects/globalarchitecture.jfif";
 import filledplaywrtie from "@/assets/projects/filledplaywrtie.png";
-import n8nworkflow from "@/assets/projects/n8nworkflow.png";
-import jsonexemple from "@/assets/projects/json-exemple.png";
-import sqtrtemplatepart1 from "@/assets/projects/sqtrtemplatepart1.png";
-import sqtrtemplatepart2 from "@/assets/projects/sqtrtemplatepart2.png";
-import testcase1 from "@/assets/projects/testcase1.png";
-import qa1 from "@/assets/projects/qa1.png";
-import qa2 from "@/assets/projects/qa2.png";
-import qaai from "@/assets/projects/qaai.png";
+import n8nworkflow from "@/assets/projects/n8nworkflow.JPG";
+import jsonexemple from "@/assets/projects/json-exemple.JPG";
+import sqtrtemplatepart1 from "@/assets/projects/sqtr-template-part-1.png";
+import sqtrtemplatepart2 from "@/assets/projects/sqtr-template-part-2.png.JPG";
+import testcase1 from "@/assets/projects/testcase1.JPG";
+import qa1 from "@/assets/projects/qa1.JPG";
+import qa2 from "@/assets/projects/qa2.JPG";
+import qaai from "@/assets/projects/qaai.JPG";
 const projects = [
   {
     id: 1,
